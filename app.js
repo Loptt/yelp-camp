@@ -15,7 +15,7 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-mongoose.connect("mongodb://loptt:tobyestrada1@ds139934.mlab.com:39934/yelpcamp", { useNewUrlParser: true }, (err) => {
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
     if (err) {
         console.log("DATABASE ERROR");
         console.log(err);
@@ -55,6 +55,6 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, () => {
-    console.log("YelpCamp server has started!");
+app.listen(3000, () => {
+    console.log("YelpCamp server has started on " + process.env.PORT);
 });
