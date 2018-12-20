@@ -15,7 +15,7 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true }, (err) => {
+mongoose.connect("mongodb://loptt:tobyestrada1@ds139934.mlab.com:39934/yelpcamp", { useNewUrlParser: true }, (err) => {
     if (err) {
         console.log("DATABASE ERROR");
         console.log(err);
